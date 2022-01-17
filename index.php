@@ -50,7 +50,13 @@
         public $title;
         public $subTitle;
         public $movieDirector;
-        
+
+        // metodi 
+        public function __construct($title) {
+
+            // valorizzo la variabile in ingresso 
+            $this -> title = $title;
+        }
     }
     ?>
 </body>
