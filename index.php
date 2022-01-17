@@ -44,60 +44,56 @@
           *      Peter Pan: il ritorno all'isola che non c'e' | Robin Budd
           */
     
-    class Film {
+        class Film {
 
-        // attributi 
-        public $title;
-        public $subHeading;
-        public $movieDirector;
+            // attributi 
+            public $title;
+            public $subHeading;
+            public $movieDirector;
 
-        // metodi 
-        public function __construct($title) {
+            // metodi 
+            public function __construct($title) {
 
-            // valorizzo la variabile in ingresso 
-            $this -> title = $title;
-        }
+                // valorizzo la variabile in ingresso 
+                $this -> title = $title;
+            }
 
-        public function getFullTitle() {
+            public function getFullTitle() {
 
-            if($this -> subHeading === " ") {
-                // return $this -> title . ": " . $this -> subHeading;
-                return $this -> title;
-            } else {
-                // return $this -> title;
-                return $this -> title . ": " . $this -> subHeading;
+                if($this -> subHeading === " ") {
+                    return $this -> title;
+                } else {
+                    return $this -> title . ": " . $this -> subHeading;
+                }
+            }
+
+            public function __toString() {
+                
+                if($this -> movieDirector === " ") {
+                    return $this -> getFullTitle() . " | " . "???";
+                } else {
+                    return $this -> getFullTitle() . " | " . $this -> movieDirector;
+                }
             }
         }
 
-        public function __toString() {
-            
-            if($this -> movieDirector === " ") {
-                // return $this -> getFullTitle() . " | " . $this -> movieDirector;
-                return $this -> getFullTitle() . " | " . "???";
-            } else {
-                // return $this -> getFullTitle() . " | " . "???";
-                return $this -> getFullTitle() . " | " . $this -> movieDirector;
-            }
-        }
-    }
+        // genero le 3 istanze della classe Film e valorizzo le variabili
+        $f1 = new Film("Matrix");
+        $f1 -> subHeading = " ";
+        $f1 -> movieDirector = " ";
 
-    // genero le 3 istanze della classe Film e valorizzo le variabili
-    $f1 = new Film("Matrix");
-    $f1 -> subHeading = " ";
-    $f1 -> movieDirector = " ";
+        $f2 = new Film("Fantozzi 2");
+        $f2 -> subHeading = "il ritorno di fantozzi";
+        $f2 -> movieDirector = " ";
 
-    $f2 = new Film("Fantozzi 2");
-    $f2 -> subHeading = "il ritorno di fantozzi";
-    $f2 -> movieDirector = " ";
+        $f3 = new Film("Peter Pan");
+        $f3 -> subHeading = "il ritorno all'isola che non c'e'";
+        $f3 -> movieDirector = "Robin Budd";
 
-    $f3 = new Film("Peter Pan");
-    $f3 -> subHeading = "il ritorno all'isola che non c'e'";
-    $f3 -> movieDirector = "Robin Budd";
-
-    // stampo gli oggetti tramite toString 
-    echo $f1 . "<br>";
-    echo $f2 . "<br>";
-    echo $f3 . "<br>";
+        // stampo gli oggetti tramite toString 
+        echo $f1 . "<br>";
+        echo $f2 . "<br>";
+        echo $f3 . "<br>";
 
     ?>
 </body>
