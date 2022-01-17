@@ -76,6 +76,22 @@
             }
         }
     }
+
+    // genero le 3 istanze della classe Film e valorizzo le eventuali variabili
+    $f1 = new Film("Matrix");
+
+    $f2 = new Film("Fantozzi 2");
+    $f2 -> subHeading = "il ritorno di fantozzi";
+
+    $f3 = new Film("Peter Pan");
+    $f3 -> subHeading = "il ritorno all'isola che non c'e'";
+    $f3 -> movieDirector = "Robin Budd";
+
+    // stampo gli oggetti tramite toString 
+    echo $f1 . "<br>";
+    echo $f2 . "<br>";
+    echo $f3 . "<br>";
+
     ?>
 </body>
 </html>
