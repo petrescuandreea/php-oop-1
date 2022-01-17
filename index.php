@@ -60,28 +60,35 @@
 
         public function getFullTitle() {
 
-            if( $this -> subHeading) {
-                return $this -> title . ": " . $this -> subHeading;
-            } else {
+            if($this -> subHeading === " ") {
+                // return $this -> title . ": " . $this -> subHeading;
                 return $this -> title;
+            } else {
+                // return $this -> title;
+                return $this -> title . ": " . $this -> subHeading;
             }
         }
 
         public function __toString() {
             
-            if($this -> movieDirector) {
-                return $this -> getFullTitle() . " | " . $this -> movieDirector;
-            } else {
+            if($this -> movieDirector === " ") {
+                // return $this -> getFullTitle() . " | " . $this -> movieDirector;
                 return $this -> getFullTitle() . " | " . "???";
+            } else {
+                // return $this -> getFullTitle() . " | " . "???";
+                return $this -> getFullTitle() . " | " . $this -> movieDirector;
             }
         }
     }
 
-    // genero le 3 istanze della classe Film e valorizzo le eventuali variabili
+    // genero le 3 istanze della classe Film e valorizzo le variabili
     $f1 = new Film("Matrix");
+    $f1 -> subHeading = " ";
+    $f1 -> movieDirector = " ";
 
     $f2 = new Film("Fantozzi 2");
     $f2 -> subHeading = "il ritorno di fantozzi";
+    $f2 -> movieDirector = " ";
 
     $f3 = new Film("Peter Pan");
     $f3 -> subHeading = "il ritorno all'isola che non c'e'";
