@@ -48,7 +48,7 @@
 
         // attributi 
         public $title;
-        public $subTitle;
+        public $subHeading;
         public $movieDirector;
 
         // metodi 
@@ -56,6 +56,15 @@
 
             // valorizzo la variabile in ingresso 
             $this -> title = $title;
+        }
+
+        public function getFullTitle() {
+
+            if( $this -> subHeading) {
+                return $this -> title . ": " . $this -> subHeading;
+            } else {
+                return $this -> title;
+            }
         }
     }
     ?>
