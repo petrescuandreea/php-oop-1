@@ -66,6 +66,15 @@
                 return $this -> title;
             }
         }
+
+        public function __toString() {
+            
+            if($this -> movieDirector) {
+                return $this -> getFullTitle() . " | " . $this -> movieDirector;
+            } else {
+                return $this -> getFullTitle() . " | " . "???";
+            }
+        }
     }
     ?>
 </body>
